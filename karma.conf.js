@@ -8,7 +8,6 @@ module.exports = function (config) {
 
     plugins: [
       'karma-webpack',
-      'karma-sourcemap-loader',
       'karma-jasmine',
       'karma-chrome-launcher',
       'karma-jasmine-html-reporter',
@@ -16,11 +15,13 @@ module.exports = function (config) {
     ],
 
     files: [
-      './app/app.component.spec.ts',
+      { pattern: './karma-test-shim.js', watched: false },
+      './app/**/*.ts',
     ],
 
     preprocessors: {
-      './app/app.component.spec.ts': ['webpack', 'sourcemap']
+      './karma-test-shim.js': ['webpack'],
+      './app/**/*.ts': ['webpack']
     },
 
     webpack: webpackConfig,
@@ -71,11 +72,11 @@ module.exports = function (config) {
           }
         }
       }
-    },
+    }, 
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
-    autoWatch: false,
+    autoWatch: true,
     browsers: ['Chrome'],
     singleRun: false
   };

@@ -321,3 +321,4 @@ node_modules/**
 coverage/**
 dist/**
 app/**/*.js
+**/.DS_Store

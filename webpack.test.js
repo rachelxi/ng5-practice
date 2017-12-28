@@ -22,20 +22,22 @@ module.exports = {
         loaders: [
           {
             loader: 'awesome-typescript-loader',
-            options: { configFileName: root('.', 'tsconfig.json') }
           } , 'angular2-template-loader'
         ],
-        exclude: /node_modules/,
-        enforce: 'pre'
+        exclude: [
+          'node_modules'
+        ]
       },
       {
-        test: /.\/.+\.ts$/,
-        exclude: /(node_modules|\.spec\.ts$)/,
+        test: /\.ts$/,
+        exclude: [
+          'node_modules'
+        ],
         loader: 'istanbul-instrumenter-loader',
-        enforce: 'post',
         options: {
           esModules: true
-        }
+        },
+        enforce: 'post'
       },
       // {
       //   test: /\.js$/,

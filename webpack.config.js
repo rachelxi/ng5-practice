@@ -11,6 +11,8 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
+  devtool: 'inline-source-map',
+
   entry: {
     'polyfills': './polyfills.ts',
     'app': './main.ts'
@@ -51,7 +53,7 @@ module.exports = {
         exclude: root('.', 'app'),
         loader: ExtractTextPlugin.extract({ 
           fallback: 'style-loader', 
-          use: 'css-loader?sourceMap' 
+          use: 'css-loader' 
         })
       },
       {
