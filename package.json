@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
+    "prestart": "webpack",
     "start": "http-server ./dist -p 8080 -o",
-    "build": "webpack",
     "test": "karma start ./karma.conf.js --single-run",
     "posttest": "http-server ./coverage/html -p 9000 -o",
     "lint": "tslint -c tslint.json --project ."
@@ -53,6 +53,7 @@
     "style-loader": "^0.19.1",
     "tslint": "^5.8.0",
     "typescript": "~2.6.2",
+    "uglifyjs-webpack-plugin": "^1.1.5",
     "webpack": "~3.10.0"
   }
 }
