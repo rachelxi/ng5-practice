@@ -31,7 +31,8 @@ module.exports = {
       {
         test: /\.ts$/,
         exclude: [
-          'node_modules'
+          /node_modules/,
+          /\.spec\.ts$/,
         ],
         loader: 'istanbul-instrumenter-loader',
         options: {
@@ -39,14 +40,6 @@ module.exports = {
         },
         enforce: 'post'
       },
-      // {
-      //   test: /\.js$/,
-      //   use: { 
-      //     loader: 'istanbul-instrumenter-loader',
-      //     options: { esModules: true }
-      //   },
-      //   exclude: /node_modules|\.spec\.js$/
-      // },
       {
         test: /\.html$/,
         loader: 'html-loader'

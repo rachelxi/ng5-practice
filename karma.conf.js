@@ -15,13 +15,11 @@ module.exports = function (config) {
     ],
 
     files: [
-      { pattern: './karma-test-shim.js', watched: false },
-      './app/**/*.ts',
+      { pattern: './karma-test-shim.js', watched: false }
     ],
 
     preprocessors: {
-      './karma-test-shim.js': ['webpack'],
-      './app/**/*.ts': ['webpack']
+      './karma-test-shim.js': ['webpack']
     },
 
     webpack: webpackConfig,

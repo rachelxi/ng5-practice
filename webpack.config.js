@@ -80,13 +80,5 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './index.html'
     })
-  ],
-
-  devServer: {
-    // historyApiFallback: true,
-    // stats: 'minimal',
-    contentBase: root(__dirname, "dist"),
-    compress: true,
-    port: 8080
-  }
+  ]
 };
