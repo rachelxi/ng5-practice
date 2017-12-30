@@ -13,7 +13,7 @@ npm test
 npm run lint
 ```
 ### Configurable files:
-Instead of using angular-cli, the project manually config build/tests/linting by manual configuration so all editable.
+Instead of using angular-cli, the project manually config build/tests/linting and all editable.
 * build project
 1. ./webpack.config.js: transpile ts file into js file and split the code into three files - app.js, vendor.js and polyfills.js. scss files are compiled with sass-loader and bundled into style.css. All resulting bundle files are output to './dist' folder for http-server to fetch. All js files after bundle are optimized with [uglifyJsPlugin](https://github.com/webpack-contrib/uglifyjs-webpack-plugin). Workaround with webpack warning *@angular/core/esm5* has been implemented as well. See [angular/angular#20357](https://github.com/angular/angular/issues/20357) for reference.
 2. http-server uses default port 8080 and opens the browser when webpack bundles done successfully with command 
