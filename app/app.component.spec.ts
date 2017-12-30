@@ -6,7 +6,7 @@ import { DebugElement } from '@angular/core';
 import { AppComponent } from './app.component';
 
 describe('#AppComponent', () => {
-    let de: DebugElement;
+    // let de: DebugElement;
     let comp: AppComponent;
     let fixture: ComponentFixture<AppComponent>;
 
@@ -24,6 +24,5 @@ describe('#AppComponent', () => {
 
     it('should instantiate component correctly', () => {
         expect(comp).toBeDefined();
-        expect(comp.title).toEqual('rxi test app');
     });
 });

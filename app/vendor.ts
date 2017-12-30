@@ -7,7 +7,7 @@ import '@angular/http';
 import '@angular/router';
 
 // RxJS
-import 'rxjs';
+import 'rxjs/Rx';
 
 // Other vendors for example jQuery, Lodash or Bootstrap
 import '@ng-bootstrap/ng-bootstrap';
