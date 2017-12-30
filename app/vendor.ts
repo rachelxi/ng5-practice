@@ -10,4 +10,11 @@ import '@angular/router';
 import 'rxjs';
 
 // Other vendors for example jQuery, Lodash or Bootstrap
+import '@ng-bootstrap/ng-bootstrap';
+import 'bootstrap/dist/js/bootstrap.bundle.js';
+import 'jquery/dist/jquery.min.js';
+import 'popper.js/dist/popper.min.js';
+
 // You can import js, ts, css, sass, ...
+/* entry file for all scss */
+import '../sass/practice.scss';

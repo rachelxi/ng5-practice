@@ -9,7 +9,9 @@ function root(args){
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+
+const generalStyles = new ExtractTextPlugin('style.css');
 
 module.exports = {
   devtool: 'inline-source-map',
@@ -62,12 +64,19 @@ module.exports = {
         test: /\.css$/,
         include: root('.', 'app'),
         loader: 'raw-loader'
+      },
+      {
+        test: /\.scss$/,
+        use: generalStyles.extract({
+          fallback: 'style-loader',
+          use: ['css-loader', 'sass-loader']
+        })
       }
     ]
   },
 
   plugins: [
-    new ExtractTextPlugin('[name].css'),
+    generalStyles,
 
     // Workaround for angular/angular#20357
     new webpack.ContextReplacementPlugin(
