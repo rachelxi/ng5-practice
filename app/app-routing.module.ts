@@ -1,6 +1,7 @@
 /* import libraries */
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 /* import component */
 import { BuildTableComponent } from './build-table/build-table.component';
 import { HomeComponent } from './home/home.component';
@@ -32,9 +33,5 @@ const appRoutes: Routes = [
     exports: [
         RouterModule,
     ],
-    declarations: [
-        HomeComponent,
-        BuildTableComponent,
-    ]
 })
 export class AppRoutingModule { }
