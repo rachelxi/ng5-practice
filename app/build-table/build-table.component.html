@@ -8,14 +8,9 @@
     <tbody>
       <tr *ngFor="let rowIndex of rowCount">
         <td scope="row">{{ rowHeaders[rowIndex] }}</td>
-        <td>Test</td>
-        <td>Test</td>
-        <td>Test</td>
-        <td>Test</td>
-        <td>{{ tableContent[0][0] }}</td>
-        <!-- <td *ngFor="let columnIndex of columnCount">
-            {{ tableContent[rowIndex][0] }}
-        </td>  -->
+        <td *ngFor="let columnIndex of columnCount">
+            {{ tableContent[rowIndex][columnIndex] }}
+        </td> 
       </tr>
     </tbody>
 </table>

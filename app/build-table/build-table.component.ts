@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { retry } from 'rxjs/operator/retry';
 
 const columnNumber = 5;
 const rowNumber = 5;
@@ -12,7 +13,7 @@ export class BuildTableComponent {
     public rowCount: number[];
     public columnHeaders = ['A', 'B', 'C', 'D', 'E'];
     public rowHeaders: number[];
-    public tableContent: any[][] = [['test']];
+    public tableContent: any[][];
 
     constructor() {
       this.initTable();
@@ -24,12 +25,13 @@ export class BuildTableComponent {
       this.columnCount = this.initCount(columnNumber);
       this.rowCount = this.initCount(rowNumber);
       this.rowHeaders = this.initCount(rowNumber, true);
+      this.tableContent = this.initTableContent(rowNumber, columnNumber);
     }
     /**
-     * @description
-     * @param limit {number}
-     * @param header {boolean}
-     * @returns {number[]}
+     * @description Initialize column/row count and row headers.
+     * @param limit The limit of count. 
+     * @param header Whether the result for headers.
+     * @returns {number[]} Resulting count.
      */
     public initCount(limit: number, header?: boolean): number[] {
       const resultingCount = [];
@@ -37,5 +39,18 @@ export class BuildTableComponent {
         (header) ? resultingCount.push(i+1) : resultingCount.push(i);
       }
       return resultingCount;
+    }
+    /**
+     * @description
+     * @param rowLimit 
+     * @param columnLimit 
+     * @returns {any[][]}
+     */
+    public initTableContent(rowLimit: number, columnLimit: number): any[][]{
+      let tableContent = [];
+      for(let i = 0; i < rowLimit; i++) {
+        tableContent.push(Array(columnLimit).fill(null));
+      }
+      return tableContent;
     }
 }
