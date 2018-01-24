@@ -9,7 +9,9 @@
       <tr *ngFor="let rowIndex of rowCount">
         <td scope="row">{{ rowHeaders[rowIndex] }}</td>
         <td *ngFor="let columnIndex of columnCount">
-            {{ tableContent[rowIndex][columnIndex] }}
+            <input 
+                    [value]="tableContent[rowIndex][columnIndex]"
+                    (input)="assignValue($event, rowIndex, columnIndex)"/>
         </td> 
       </tr>
     </tbody>
