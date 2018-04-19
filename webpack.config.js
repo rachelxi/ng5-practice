@@ -92,6 +92,12 @@ module.exports = {
       template: './index.html'
     }),
 
-    new UglifyJsPlugin()
+    new UglifyJsPlugin({
+      uglifyOptions: {
+        output: {
+          comments: false
+        }
+      }
+    })
   ]
 };
