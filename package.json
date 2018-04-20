@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "prestart": "webpack",
-    "start": "http-server ./index.html -p 8080 -o",
+    "start": "http-server ./dist -p 8080 -o",
     "test": "karma start ./karma.conf.js --single-run",
     "posttest": "http-server ./coverage/html -p 9000 -o",
     "lint": "tslint -c tslint.json --project ."

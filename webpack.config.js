@@ -88,6 +88,10 @@ module.exports = {
       name: 'vendor',
     }),
 
+    new HtmlWebpackPlugin({
+      template: './index.html'
+    }),
+
     new UglifyJsPlugin({
       uglifyOptions: {
         output: {
